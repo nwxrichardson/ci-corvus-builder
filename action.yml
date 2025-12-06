@@ -15,6 +15,9 @@ runs:
       with: 
         repository: epsilonlabs/sirius-pr-action-workspace
         path: model
+    - name: Tree
+      run : tree
+      shell: bash
     - name: Move model
       run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/psl /
         mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles/psl.edit /
