@@ -15,16 +15,18 @@ runs:
       with: 
         repository: epsilonlabs/sirius-pr-action-workspace
         path: model
+    - name: Move model
+      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/psl /
+        mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles/psl.edit /
+        mv $(pwd)/model/bundles/psl.design $(pwd)/bundles/psl.design
+      shell: bash
     - name: Tree
       run : tree
-      shell: bash
-    - name: Move model
-      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/psl
       shell: bash
     - name: Docker build
       run : docker build -t nwrichardson/ci-corvus:latest . 
       shell: bash
-    - name: Docker push
-      run : docker push nwrichardson/ci-corvus:latest
-      shell: bash
+#    - name: Docker push
+#      run : docker push nwrichardson/ci-corvus:latest
+#      shell: bash
       
