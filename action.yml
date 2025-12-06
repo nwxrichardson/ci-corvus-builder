@@ -1,0 +1,21 @@
+name: 'corvus-build'
+description: 'Generate a comment showing Corvus comparisons'
+branding:
+  icon: 'box'
+  color: 'purple'
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout ci-corvus
+      uses: actions/checkout@v4
+      with: 
+        repository: nwxrichardson/ci-corvus
+#    - name: Checkout ci-corvus
+#      uses: actions/checkout@v4
+#      with: 
+#        repository: epsilonlabs/sirius-pr-action-workspace
+#        path: model
+    - name: Docker
+      run : docker build -t ci-corvus:latest . \
+        docker push nwrichardson/ci-corvus:latest
+      shell: bash
