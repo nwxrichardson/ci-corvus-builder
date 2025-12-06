@@ -3,6 +3,12 @@ description: 'Generate a comment showing Corvus comparisons'
 branding:
   icon: 'box'
   color: 'purple'
+secrets:
+  DOCKERHUB_TOKEN:
+    required: true
+vars:
+  DOCKERHUB_USERNAME:
+     required: true
 runs:
   using: 'composite'
   steps:
