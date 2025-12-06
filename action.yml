@@ -10,11 +10,14 @@ runs:
       uses: actions/checkout@v4
       with: 
         repository: nwxrichardson/ci-corvus
-#    - name: Checkout ci-corvus
-#      uses: actions/checkout@v4
-#      with: 
-#        repository: epsilonlabs/sirius-pr-action-workspace
-#        path: model
+    - name: Checkout ci-corvus
+      uses: actions/checkout@v4
+      with: 
+        repository: epsilonlabs/sirius-pr-action-workspace
+        path: model
+    - name: Move model
+      run : mv model/bundles/psl /bundles/psl
+      shell: bash
     - name: Docker build
       run : docker build -t nwrichardson/ci-corvus:latest . 
       shell: bash
