@@ -19,7 +19,7 @@ runs:
       run : tree
       shell: bash
     - name: Move model
-      run : mv /model/bundles/psl /bundles/psl
+      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/psl
       shell: bash
     - name: Docker build
       run : docker build -t nwrichardson/ci-corvus:latest . 
