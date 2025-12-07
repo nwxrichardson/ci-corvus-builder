@@ -20,8 +20,6 @@ runs:
       shell: bash
     - name: Move model
       run : mv $(pwd)/model/bundles/psl $(pwd)/bundles
-        mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles /
-        mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
       shell: bash
     - name: Tree
       run : tree
