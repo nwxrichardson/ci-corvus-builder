@@ -22,7 +22,7 @@ runs:
       run : mv $(pwd)/model/bundles/psl $(pwd)/bundles
       shell: bash
     - name: Move edit
-      run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
+      run : mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles
       shell: bash
     - name: Move design
       run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
