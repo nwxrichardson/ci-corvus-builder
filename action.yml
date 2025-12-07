@@ -31,7 +31,7 @@ runs:
       run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
       shell: bash
     - name: Maven Build
-      run : mvn clean verify
+      run : mvn -q clean verify
       shell: bash
     - name: Tree
       run : tree
