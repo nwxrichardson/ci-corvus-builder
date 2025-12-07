@@ -15,9 +15,6 @@ runs:
       with: 
         repository: epsilonlabs/sirius-pr-action-workspace
         path: model
-    - name: Tree
-      run : tree
-      shell: bash
     - name: Move model
       run : mv $(pwd)/model/bundles/psl $(pwd)/bundles
       shell: bash
@@ -26,6 +23,9 @@ runs:
       shell: bash
     - name: Move design
       run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
+      shell: bash
+    - name: Maven Build
+      run : mvn clean verify
       shell: bash
     - name: Tree
       run : tree
