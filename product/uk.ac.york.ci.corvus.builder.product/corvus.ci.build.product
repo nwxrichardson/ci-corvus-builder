@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product uid="uk.ac.york.ci.corvus.builder.product" application="uk.ac.york.ci.corvus.builder.CorvusBuildRunner" version="1.0.0" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+
+   <launcher>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="org.apache.felix.gogo.runtime"/>
+      <plugin id="org.apache.felix.gogo.shell"/>
+      <plugin id="org.apache.felix.scr"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.epsilon.emc.emf"/>
+      <plugin id="org.eclipse.epsilon.emc.emf.dt"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.console"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.sirius"/>
+      <plugin id="org.eclipse.sirius.common"/>
+      <plugin id="org.eclipse.sirius.diagram"/>
+      <plugin id="org.eclipse.sirius.diagram.sequence.model"/>
+      <plugin id="org.eclipse.sirius.diagram.ui"/>
+      <plugin id="org.eclipse.sirius.properties"/>
+      <plugin id="org.eclipse.sirius.table.model"/>
+      <plugin id="org.eclipse.sirius.ui"/>
+      <plugin id="psl"/>
+      <plugin id="psl.design"/>
+      <plugin id="psl.edit"/>
+      <plugin id="uk.ac.york.ci.corvus.builder"/>
+   </plugins>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>
