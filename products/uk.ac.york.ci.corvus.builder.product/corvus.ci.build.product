@@ -47,9 +47,6 @@
       <plugin id="org.eclipse.sirius.properties"/>
       <plugin id="org.eclipse.sirius.table.model"/>
       <plugin id="org.eclipse.sirius.ui"/>
-      <plugin id="psl"/>
-      <plugin id="psl.design"/>
-      <plugin id="psl.edit"/>
       <plugin id="uk.ac.york.ci.corvus.builder"/>
    </plugins>
 

@@ -14,10 +14,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
-import org.eclipse.ui.PlatformUI;
-
-import org.eclipse.swt.widgets.Display;
-import uk.ac.york.corvus.containers.CorvusGenContainer;
 import uk.ac.york.corvus.jobs.GenMatchOdesignFromOdesign;
 
 public class CorvusBuildRunner implements IApplication {
