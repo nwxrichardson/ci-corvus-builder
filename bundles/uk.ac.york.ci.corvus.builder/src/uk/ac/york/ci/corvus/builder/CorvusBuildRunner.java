@@ -43,7 +43,7 @@ public class CorvusBuildRunner implements IApplication {
 			IPath inPath = new Path("/description/psl.odesign");
 			IFile inFile = inProject.getFile(inPath);
 			
-			IProjectDescription outDescription = ResourcesPlugin.getWorkspace().loadProjectDescription(new Path("C:/Users/nr823/eclipse-workspace/Corvus/compare.design/.project"));
+			IProjectDescription outDescription = ResourcesPlugin.getWorkspace().loadProjectDescription(new Path("C:/Users/nr823/git/ci-corvus-builder/util/uk.ac.york.diff.representation/.project"));
 			IProject outProject = ResourcesPlugin.getWorkspace().getRoot().getProject(outDescription.getName());
 			if (!outProject.exists())	outProject.create(outDescription, null);
 			

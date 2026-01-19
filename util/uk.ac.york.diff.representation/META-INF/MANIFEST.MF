@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: uk.ac.york.diff.representation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: uk.ac.york.diff.representation.Activator
+Bundle-Localization: plugin
+Require-Bundle: uk.ac.york.corvus,org.eclipse.ui,org.eclipse.core.runtim
+ e,org.eclipse.core.resources,org.eclipse.sirius,org.eclipse.sirius.comm
+ on.acceleo.aql
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Vendor: %providerName
+Automatic-Module-Name: compare.design
+
