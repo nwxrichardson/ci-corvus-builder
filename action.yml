@@ -33,9 +33,8 @@ runs:
       run : tree
       shell: bash
     - name: Maven Build
-      run : mvn -q clean verify
+      run : mvn clean verify
       shell: bash
-
     - name: Docker build
       run : docker build -t nwrichardson/ci-corvus:latest . 
       shell: bash   
