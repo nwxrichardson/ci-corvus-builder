@@ -21,13 +21,13 @@ runs:
         repository: epsilonlabs/sirius-pr-action-workspace
         path: model
     - name: Move model
-      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles
+      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/model
       shell: bash
     - name: Move edit
-      run : mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles
+      run : mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles/model.edit
       shell: bash
     - name: Move design
-      run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles
+      run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles/model.design
       shell: bash
     - name: Tree
       run : tree
