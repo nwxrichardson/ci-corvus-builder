@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Match psl" version="12.0.0.2017041100">
+  <ownedViewpoints name="Match MyViewpoint" modelFileExtension="*.corvusmatch" icon="/uk.ac.york.corvus/icon/CorvusIcon.png">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Match psl.tasks.diagram" label="Tasks Diagram" domainClass="corvusmatch::Match" preconditionExpression="aql:self.domainClass('psl::Project') " enablePopupBars="true">
+      <metamodel href="../../psl/psl.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Differencing Only" label="Differencing Only">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" viewConditionExpression="aql:self.diffHide()"/>
+      </filters>
+      <defaultLayer name="Default">
+        <nodeMappings name="Match psl.tasks.taskNode" label="Task node" preconditionExpression="aql:self.domainClass('psl::Task') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:tasks')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.tasks.taskNode']">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.getLabel('feature:title')" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Task%20Colour']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Match psl.tasks.dependencyEdge" label="Dependency edge" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']" targetFinderExpression="aql:self.getEndOf(diagram, 'feature:dependencies')">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="aql:self.getLabel('')">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Zoom Tools" icon="/uk.ac.york.corvus/icons/zoom.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Annotations" iconPath="/uk.ac.york.corvus/icons/zoomAnno.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panAnno()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Diffs" iconPath="/uk.ac.york.corvus/icons/zoomDiff.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panDiff()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Diagram Merge Tools" icon="/uk.ac.york.corvus/icons/diagramMerge.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Accept" iconPath="/uk.ac.york.corvus/icons/diagramAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Reject" iconPath="/uk.ac.york.corvus/icons/diagramReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Accept" iconPath="/uk.ac.york.corvus/icons/labelAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Reject" iconPath="/uk.ac.york.corvus/icons/labelReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Accept" iconPath="/uk.ac.york.corvus/icons/graphicAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Reject" iconPath="/uk.ac.york.corvus/icons/graphicReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicReject()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+      <additionalLayers name="Move Elements" icon="/uk.ac.york.corvus/icons/move.png">
+        <edgeMappings name="Move Node" preconditionExpression="aql:(sourceView.currentLeft() and (not sourceView.currentRight())) and (targetView.currentRight() and (not targetView.currentLeft()))" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetFinderExpression="aql:self" sourceFinderExpression="aql:self" domainClass="corvusmatch::Match" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="aql:'3'">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Graphical Changes" icon="/uk.ac.york.corvus/icons/graphicalChange.png">
+        <containerMappings name="Pointless Container for Default" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings name="Left Graphical Node: psl.tasks.taskNode" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'old'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Task%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.tasks.taskNode" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'new'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Task%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Match psl.diagrams.efforts" label="Efforts Diagram" domainClass="corvusmatch::Match" preconditionExpression="aql:self.domainClass('psl::Project') " enablePopupBars="true">
+      <metamodel href="../../psl/psl.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Differencing Only" label="Differencing Only">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" viewConditionExpression="aql:self.diffHide()"/>
+      </filters>
+      <defaultLayer name="Default">
+        <nodeMappings name="Match psl.diagrams.efforts.nodes.task" label="Task node" preconditionExpression="aql:self.domainClass('psl::Task') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:tasks')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.diagrams.efforts.nodes.task']">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabel('feature:title')" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/25.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.runFilter('aql:self.effort.percentage->sum() > Sequence{99}->sum()')">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabel('feature:title')" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/100.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.runFilter('aql:self.effort.percentage->sum() > Sequence{74}->sum()')">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabel('feature:title')" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/75.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:self.runFilter('aql:self.effort.percentage->sum() > Sequence{49}->sum()')">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.getLabel('feature:title')" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/50.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="Match psl.diagrams.efforts.nodes.person" label="Person node" preconditionExpression="aql:self.domainClass('psl::Person') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:people')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.diagrams.efforts.nodes.person']">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.getLabel('feature:name')" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Match psl.efforts.edges.effortEdge" label="Effort edge" preconditionExpression="aql:self.isRealLink(source, target, sourceView, targetView, 'feature:person', 'aql:self.eContainer()')" semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'aql:self.eAllContents()')" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']" targetFinderExpression="aql:self.getEndOf(diagram, 'aql:self.eContainer()')" sourceFinderExpression="aql:self.getEndOf(diagram, 'feature:person')" domainClass="corvusmatch::Match" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql:self.getLabel('aql:self.percentage + \'%\'')">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Zoom Tools" icon="/uk.ac.york.corvus/icons/zoom.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Annotations" iconPath="/uk.ac.york.corvus/icons/zoomAnno.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panAnno()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Diffs" iconPath="/uk.ac.york.corvus/icons/zoomDiff.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panDiff()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Diagram Merge Tools" icon="/uk.ac.york.corvus/icons/diagramMerge.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Accept" iconPath="/uk.ac.york.corvus/icons/diagramAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Reject" iconPath="/uk.ac.york.corvus/icons/diagramReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Accept" iconPath="/uk.ac.york.corvus/icons/labelAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Reject" iconPath="/uk.ac.york.corvus/icons/labelReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Accept" iconPath="/uk.ac.york.corvus/icons/graphicAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Reject" iconPath="/uk.ac.york.corvus/icons/graphicReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicReject()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.0/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.1/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task']/@conditionnalStyles.2/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+      <additionalLayers name="Move Elements" icon="/uk.ac.york.corvus/icons/move.png">
+        <edgeMappings name="Move Node" preconditionExpression="aql:(sourceView.currentLeft() and (not sourceView.currentRight())) and (targetView.currentRight() and (not targetView.currentLeft()))" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetFinderExpression="aql:self" sourceFinderExpression="aql:self" domainClass="corvusmatch::Match" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="aql:'3'">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Graphical Changes" icon="/uk.ac.york.corvus/icons/graphicalChange.png">
+        <containerMappings name="Pointless Container for Default" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings name="Left Graphical Node: psl.diagrams.efforts.nodes.task" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'old'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/25.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.filterLeft('aql:self.effort.percentage->sum() > Sequence{99}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'old'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/100.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.filterLeft('aql:self.effort.percentage->sum() > Sequence{74}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'old'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/75.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.filterLeft('aql:self.effort.percentage->sum() > Sequence{49}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'old'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/50.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.diagrams.efforts.nodes.task" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'new'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/25.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.filterRight('aql:self.effort.percentage->sum() > Sequence{99}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'new'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/100.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>WEST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.filterRight('aql:self.effort.percentage->sum() > Sequence{74}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'new'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/75.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>WEST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.filterRight('aql:self.effort.percentage->sum() > Sequence{49}->sum()')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'new'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/psl.design/images/50.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>WEST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Left Graphical Node: psl.diagrams.efforts.nodes.person" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'old'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.diagrams.efforts.nodes.person" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'new'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Match psl.tasks2.diagram" label="Advanced Tasks Diagram" domainClass="corvusmatch::Match" preconditionExpression="aql:self.domainClass('psl::Project') " enablePopupBars="true">
+      <metamodel href="../../psl/psl.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="psl.tasks2.filters.smallTasks" label="Small tasks">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']" semanticConditionExpression="aql:self.duration &lt;= 2"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="psl.tasks2.filters.largeTasks" label="Large tasks">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']" semanticConditionExpression="aql:self.duration > 2"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="psl.tasks2.filters.varFilter" label="Smaller than...">
+        <filters xsi:type="filter:VariableFilter" semanticConditionExpression="aql:not self.oclIsKindOf(psl::Task) or self.duration &lt; durationLessThan">
+          <ownedVariables xsi:type="description:TypedVariable" userDocumentation="Only show tasks with durations less than this" name="durationLessThan" defaultValueExpression="3">
+            <valueType href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+          </ownedVariables>
+        </filters>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Differencing Only" label="Differencing Only">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" viewConditionExpression="aql:self.diffHide()"/>
+      </filters>
+      <defaultLayer name="Default">
+        <edgeMappings name="Match psl.tasks2.edges.dependency" label="Dependency edge" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']" targetFinderExpression="aql:self.getEndOf(diagram, 'feature:dependencies')">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="aql:self.getLabel('')">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Match psl.tasks2.nodes.taskContainer" label="Task Container" preconditionExpression="aql:self.domainClass('psl::Task') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'aql:self.tasks')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='psl.tasks2.nodes.taskContainer%3A%20Left%20Graphical%20Node'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='psl.tasks2.nodes.taskContainer%3A%20Right%20Graphical%20Node']">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.getLabel('feature:title')" foregroundColor="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Task%20Colour']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.runFilter('aql:self.duration>3')">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:self.getLabel('feature:title')">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="Zoom Tools" icon="/uk.ac.york.corvus/icons/zoom.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Annotations" iconPath="/uk.ac.york.corvus/icons/zoomAnno.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panAnno()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Diffs" iconPath="/uk.ac.york.corvus/icons/zoomDiff.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panDiff()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Diagram Merge Tools" icon="/uk.ac.york.corvus/icons/diagramMerge.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Accept" iconPath="/uk.ac.york.corvus/icons/diagramAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Reject" iconPath="/uk.ac.york.corvus/icons/diagramReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Accept" iconPath="/uk.ac.york.corvus/icons/labelAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Reject" iconPath="/uk.ac.york.corvus/icons/labelReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Accept" iconPath="/uk.ac.york.corvus/icons/graphicAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Reject" iconPath="/uk.ac.york.corvus/icons/graphicReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicReject()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']/@conditionnalStyles.0/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+      <additionalLayers name="psl.tasks2.layers.deliverables" label="Deliverables layer">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="Match psl.tasks2.deliverables.task" preconditionExpression="aql:self.domainClass('psl::Task') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:tasks')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.tasks2.layers.deliverables']/@subNodeMappings[name='psl.tasks2.deliverables.task%3A%20Left%20Graphical%20Node'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.tasks2.layers.deliverables']/@subNodeMappings[name='psl.tasks2.deliverables.task%3A%20Right%20Graphical%20Node']" importedMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer']">
+          <subNodeMappings name="Match psl.tasks2.nodes.deliverableSubnode" label="Deliverable subnode" preconditionExpression="aql:self.domainClass('psl::Deliverable') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:deliverables')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.tasks2.layers.deliverables']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.tasks2.layers.deliverables']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.tasks2.nodes.deliverableSubnode']">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.getLabel('feature:title')" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
+      <additionalLayers name="Move Elements" icon="/uk.ac.york.corvus/icons/move.png">
+        <edgeMappings name="Move Node" preconditionExpression="aql:(sourceView.currentLeft() and (not sourceView.currentRight())) and (targetView.currentRight() and (not targetView.currentLeft()))" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetFinderExpression="aql:self" sourceFinderExpression="aql:self" domainClass="corvusmatch::Match" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="aql:'3'">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Graphical Changes" icon="/uk.ac.york.corvus/icons/graphicalChange.png">
+        <containerMappings name="Pointless Container for Default" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings name="psl.tasks2.nodes.taskContainer: Left Graphical Node" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:'old'" sizeComputationExpression="5" labelPosition="node" workspacePath="/uk.ac.york.diff.representation/GEN_SVGs/LEFT_TO_RIGHT_b5fefe_ffffff.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.filterLeft('aql:self.duration>3')">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:'old'" sizeComputationExpression="5" labelPosition="node" workspacePath="/uk.ac.york.diff.representation/GEN_SVGs/LEFT_TO_RIGHT_ef2929_f68b8b.svg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="psl.tasks2.nodes.taskContainer: Right Graphical Node" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:'new'" sizeComputationExpression="5" labelPosition="node" workspacePath="/uk.ac.york.diff.representation/GEN_SVGs/LEFT_TO_RIGHT_b5fefe_ffffff.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+            <conditionnalStyles predicateExpression="aql:self.filterRight('aql:self.duration>3')">
+              <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql:'new'" sizeComputationExpression="5" labelPosition="node" workspacePath="/uk.ac.york.diff.representation/GEN_SVGs/LEFT_TO_RIGHT_ef2929_f68b8b.svg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>WEST</forbiddenSides>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+        </containerMappings>
+        <containerMappings name="Pointless Container for psl.tasks2.layers.deliverables" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings xsi:type="description_1:NodeMappingImport" name="psl.tasks2.deliverables.task: Left Graphical Node" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match"/>
+          <subNodeMappings xsi:type="description_1:NodeMappingImport" name="psl.tasks2.deliverables.task: Right Graphical Node" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match"/>
+          <subNodeMappings name="Left Graphical Node: psl.tasks2.nodes.deliverableSubnode" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'old'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.tasks2.nodes.deliverableSubnode" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'new'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Match psl.deliverables.diagram" label="Deliverables Diagram" domainClass="corvusmatch::Match" preconditionExpression="aql:self.domainClass('psl::Task') " enablePopupBars="true">
+      <metamodel href="../../psl/psl.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Differencing Only" label="Differencing Only">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" viewConditionExpression="aql:self.diffHide()"/>
+      </filters>
+      <defaultLayer name="Default">
+        <nodeMappings name="Match psl.deliverables.nodes.deliverable" label="Deliverable Node" preconditionExpression="aql:self.domainClass('psl::Deliverable') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'feature:deliverables')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20Default']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.deliverables.nodes.deliverable']">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.getLabel('feature:title')" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Deliverable%20Colour']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="Zoom Tools" icon="/uk.ac.york.corvus/icons/zoom.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Annotations" iconPath="/uk.ac.york.corvus/icons/zoomAnno.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panAnno()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Pan &amp; Zoom to Diffs" iconPath="/uk.ac.york.corvus/icons/zoomDiff.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.panDiff()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Diagram Merge Tools" icon="/uk.ac.york.corvus/icons/diagramMerge.png">
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Accept" iconPath="/uk.ac.york.corvus/icons/diagramAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Diagram Reject" iconPath="/uk.ac.york.corvus/icons/diagramReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.diagramReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Accept" iconPath="/uk.ac.york.corvus/icons/labelAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Label Reject" iconPath="/uk.ac.york.corvus/icons/labelReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.labelReject()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Accept" iconPath="/uk.ac.york.corvus/icons/graphicAccept.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicAccept()"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolDescription" name="Graphic Reject" iconPath="/uk.ac.york.corvus/icons/graphicReject.png">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:elementView.graphicReject()"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+      <additionalLayers name="psl.deliverables.layers.people" label="People" activeByDefault="true">
+        <nodeMappings name="Match psl.deliverables.nodes.person" label="Person Node" preconditionExpression="aql:self.domainClass('psl::Person') " semanticCandidatesExpression="aql:self.getFromSCE(diagram, containerView, viewPoint, 'aql:self.effort.person')" domainClass="corvusmatch::Match" reusedBorderedNodeMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.deliverables.layers.people']/@subNodeMappings[name='Left%20Graphical%20Node%3A%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='Graphical%20Changes']/@containerMappings[name='Pointless%20Container%20for%20psl.deliverables.layers.people']/@subNodeMappings[name='Right%20Graphical%20Node%3A%20psl.deliverables.nodes.person']">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:self.getLabel('feature:name')" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Match psl.deliverables.edges.lead" label="Lead Edge" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']" targetFinderExpression="aql:self.getEndOf(diagram, 'feature:lead')">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12" labelExpression="aql:self.getLabel('')">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(0)" imageExpression="/uk.ac.york.corvus/icons/orangeAdd.png" tooltipExpression="Add after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDel.png" tooltipExpression="Del after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(0)" imageExpression="/uk.ac.york.corvus/icons/orangeXst.png" tooltipExpression="Xst after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after orange" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(0)" imageExpression="/uk.ac.york.corvus/icons/orangeDnx.png" tooltipExpression="Dnx after orange"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(1)" imageExpression="/uk.ac.york.corvus/icons/purpleAdd.png" tooltipExpression="Add after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDel.png" tooltipExpression="Del after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(1)" imageExpression="/uk.ac.york.corvus/icons/purpleXst.png" tooltipExpression="Xst after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after purple" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(1)" imageExpression="/uk.ac.york.corvus/icons/purpleDnx.png" tooltipExpression="Dnx after purple"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Add after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorAdded(2)" imageExpression="/uk.ac.york.corvus/icons/yellowAdd.png" tooltipExpression="Add after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Del after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorDeleted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDel.png" tooltipExpression="Del after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Xst after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorExisted(2)" imageExpression="/uk.ac.york.corvus/icons/yellowXst.png" tooltipExpression="Xst after yellow"/>
+          <decorationDescriptions xsi:type="description:GenericDecorationDescription" name="Dnx after yellow" position="NORTH_WEST" preconditionExpression="aql:view.isColorNotExist(2)" imageExpression="/uk.ac.york.corvus/icons/yellowDnx.png" tooltipExpression="Dnx after yellow"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isAdded()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isDeleted()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isNotExist()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:view.isGraphicalDiff()">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" attributeName="borderSizeComputationExpression" value="aql:'3'"/>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="borderColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']/@style //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person']/@style" referenceName="strokeColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
+      <additionalLayers name="Move Elements" icon="/uk.ac.york.corvus/icons/move.png">
+        <edgeMappings name="Move Node" preconditionExpression="aql:(sourceView.currentLeft() and (not sourceView.currentRight())) and (targetView.currentRight() and (not targetView.currentLeft()))" sourceMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetMapping="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.tasks.taskNode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks.dependencyEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@nodeMappings[name='Match%20psl.diagrams.efforts.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.diagrams.efforts']/@defaultLayer/@edgeMappings[name='Match%20psl.efforts.edges.effortEdge'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@edgeMappings[name='Match%20psl.tasks2.edges.dependency'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@defaultLayer/@containerMappings[name='Match%20psl.tasks2.nodes.taskContainer'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.tasks2.diagram']/@additionalLayers[name='psl.tasks2.layers.deliverables']/@containerMappings[name='Match%20psl.tasks2.deliverables.task']/@subNodeMappings[name='Match%20psl.tasks2.nodes.deliverableSubnode'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@defaultLayer/@nodeMappings[name='Match%20psl.deliverables.nodes.deliverable'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@nodeMappings[name='Match%20psl.deliverables.nodes.person'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Match%20psl.deliverables.diagram']/@additionalLayers[name='psl.deliverables.layers.people']/@edgeMappings[name='Match%20psl.deliverables.edges.lead']" targetFinderExpression="aql:self" sourceFinderExpression="aql:self" domainClass="corvusmatch::Match" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="aql:'3'">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+          </style>
+        </edgeMappings>
+      </additionalLayers>
+      <additionalLayers name="Graphical Changes" icon="/uk.ac.york.corvus/icons/graphicalChange.png">
+        <containerMappings name="Pointless Container for Default" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings name="Left Graphical Node: psl.deliverables.nodes.deliverable" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'old'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Deliverable%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.deliverables.nodes.deliverable" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'new'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Deliverable%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+        <containerMappings name="Pointless Container for psl.deliverables.layers.people" semanticCandidatesExpression="aql:Sequence{}">
+          <subNodeMappings name="Left Graphical Node: psl.deliverables.nodes.person" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'old'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Right Graphical Node: psl.deliverables.nodes.person" preconditionExpression="aql:containerView.isGraphicalDiff()" semanticCandidatesExpression="aql:self" domainClass="corvusmatch::Match">
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="aql:'new'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='Custom%20Palette']/@entries[name='Person%20Colour']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>WEST</forbiddenSides>
+            </style>
+          </subNodeMappings>
+        </containerMappings>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:TreeDescription" name="Compare Tree" domainClass="corvusmatch::Comparison">
+      <subItemMappings name="Comparison" domainClass="corvusmatch::Comparison" semanticCandidatesExpression="aql:self">
+        <defaultStyle labelExpression="Comparison">
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+        <subItemMappings name="Match" domainClass="corvusmatch::Match" semanticCandidatesExpression="aql:self.matches">
+          <defaultStyle labelExpression="aql:self.matchLabel()">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <subItemMappings name="submatches" domainClass="corvusmatch::Match" semanticCandidatesExpression="aql:self.submatches" reusedTreeItemMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Compare%20Tree']/@subItemMappings[name='Comparison']/@subItemMappings[name='Match']/@subItemMappings[name='submatches'] //@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Compare%20Tree']/@subItemMappings[name='Comparison']/@subItemMappings[name='Match']/@subItemMappings[name='Diff']">
+            <defaultStyle labelExpression="aql:self.matchLabel()">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+            <popupMenus name="Merge">
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Reset" forceRefresh="true" icon="/uk.ac.york.corvus/icons/reset.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.clearDeltas()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+            </popupMenus>
+          </subItemMappings>
+          <subItemMappings name="Diff" domainClass="corvusmatch::Diff" semanticCandidatesExpression="aql:self.differences">
+            <defaultStyle labelExpression="aql:self.diffLabel()" iconPath="aql:'Hello'">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'UNRESOLVED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/unresolved.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'UNRESOLVED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/unresolved.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'UNRESOLVED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/unresolved.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'UNRESOLVED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/unresolved.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'MERGED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/tick.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'MERGED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/tick.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'MERGED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/tick.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'MERGED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/tick.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'DISCARDED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/rejectDnx.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'DISCARDED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/rejectDnx.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'DISCARDED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/rejectDnx.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'DISCARDED'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/rejectDnx.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'SHOW'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showBoth.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'SHOW'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showBoth.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'SHOW'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showBoth.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'SHOW'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showBoth.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'SHOWACCEPT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showAccept.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'SHOWACCEPT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showAccept.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'SHOWACCEPT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showAccept.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'SHOWACCEPT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showAccept.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'ADD' and self.state.toString() = 'SHOWREJECT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showReject.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'DELETE' and self.state.toString() = 'SHOWREJECT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showReject.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'CHANGE' and self.state.toString() = 'SHOWREJECT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showReject.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+              </style>
+            </conditionalStyles>
+            <conditionalStyles predicateExpression="aql:self.kind.toString() = 'MOVE' and self.state.toString() = 'SHOWREJECT'">
+              <style labelExpression="aql:self.diffLabel()" iconPath="/uk.ac.york.corvus/icons/showReject.png">
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              </style>
+            </conditionalStyles>
+            <popupMenus name="Merge">
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Accept" forceRefresh="true" icon="/uk.ac.york.corvus/icons/tick.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.accept()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Reject" icon="/uk.ac.york.corvus/icons/rejectDnx.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.decline()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Show" icon="/uk.ac.york.corvus/icons/showBoth.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.show()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Show Accept" icon="/uk.ac.york.corvus/icons/showAccept.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.showAccept()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Show Reject" icon="/uk.ac.york.corvus/icons/showReject.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.showReject()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Reset" forceRefresh="true" icon="/uk.ac.york.corvus/icons/reset.png">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.match.clearDeltas()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+              <menuItemDescriptions xsi:type="tool:OperationAction" name="Test">
+                <view name="views"/>
+                <initialOperation>
+                  <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.test()"/>
+                </initialOperation>
+              </menuItemDescriptions>
+            </popupMenus>
+          </subItemMappings>
+          <popupMenus name="Merge">
+            <menuItemDescriptions xsi:type="tool:OperationAction" name="Reset" forceRefresh="true" icon="/uk.ac.york.corvus/icons/reset.png">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.clearDeltas()"/>
+              </initialOperation>
+            </menuItemDescriptions>
+          </popupMenus>
+        </subItemMappings>
+        <subItemMappings name="Merge Set Options" domainClass="corvusmatch::MergeSet" preconditionExpression="aql:self.toShow" semanticCandidatesExpression="aql:self.mergeSets">
+          <defaultStyle labelExpression="Merge Set">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <conditionalStyles predicateExpression="aql: self.isPurple()">
+            <style labelExpression="Merge Set">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            </style>
+          </conditionalStyles>
+          <conditionalStyles predicateExpression="aql: self.isOrange()">
+            <style labelExpression="Merge Set">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </conditionalStyles>
+          <conditionalStyles predicateExpression="aql: self.isYellow()">
+            <style labelExpression="Merge Set">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </conditionalStyles>
+          <subItemMappings name="Accept" domainClass="corvusmatch::DiffSet" semanticCandidatesExpression="aql:self.toAccept" reusedTreeItemMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Compare%20Tree']/@subItemMappings[name='Comparison']/@subItemMappings[name='Match']/@subItemMappings[name='Diff']">
+            <defaultStyle labelExpression="Accept">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Reject" domainClass="corvusmatch::DiffSet" semanticCandidatesExpression="aql:self.toReject" reusedTreeItemMappings="//@ownedViewpoints[name='Match%20MyViewpoint']/@ownedRepresentations[name='Compare%20Tree']/@subItemMappings[name='Comparison']/@subItemMappings[name='Match']/@subItemMappings[name='Diff']">
+            <defaultStyle labelExpression="Reject">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <popupMenus name="Merge">
+            <menuItemDescriptions xsi:type="tool:OperationAction" name="Select Merge Set">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.selectMergeSet()"/>
+              </initialOperation>
+            </menuItemDescriptions>
+            <menuItemDescriptions xsi:type="tool:OperationAction" name="Show Merge Set">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.showMergeSet()"/>
+              </initialOperation>
+            </menuItemDescriptions>
+            <menuItemDescriptions xsi:type="tool:OperationAction" name="Reject Merge Set">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:self.rejectMergeSet()"/>
+              </initialOperation>
+            </menuItemDescriptions>
+            <menuItemDescriptions xsi:type="tool:OperationAction" name="Reset Merge Sets">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql: self.resetMergeSets()"/>
+              </initialOperation>
+            </menuItemDescriptions>
+          </popupMenus>
+        </subItemMappings>
+        <popupMenus name="Comparison Menu">
+          <menuItemDescriptions xsi:type="tool:OperationAction" name="Expand All">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:views.toggleTreeItems(true)"/>
+            </initialOperation>
+          </menuItemDescriptions>
+          <menuItemDescriptions xsi:type="tool:OperationAction" name="Collapse All">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql:views.toggleTreeItems(false)"/>
+            </initialOperation>
+          </menuItemDescriptions>
+        </popupMenus>
+      </subItemMappings>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="psl.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="uk.ac.york.corvus.extensions.MatchExtension"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="Custom Palette">
+    <entries xsi:type="description:UserFixedColor" red="181" green="254" blue="254" name="Task Colour"/>
+    <entries xsi:type="description:UserFixedColor" red="254" green="255" blue="180" name="Person Colour"/>
+    <entries xsi:type="description:UserFixedColor" red="244" green="222" blue="169" name="Effort Colour"/>
+    <entries xsi:type="description:UserFixedColor" red="201" green="230" blue="182" name="Deliverable Colour"/>
+  </userColorsPalettes>
+</description:Group>
