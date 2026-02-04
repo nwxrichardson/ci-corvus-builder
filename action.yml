@@ -29,6 +29,9 @@ runs:
     - name: Move design
       run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles/model.design
       shell: bash
+    - name: Edit product
+      run : sed '44a\<plugin id="psl"/>' products\uk.ac.york.ci.corvus.product\corvus.ci.product
+      shell: bash
     - name: Tree
       run : tree
       shell: bash
