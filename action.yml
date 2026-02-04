@@ -1,5 +1,15 @@
 name: 'corvus-build'
 description: 'Generate a comment showing Corvus comparisons'
+inputs: 
+  model-location:
+    description: 'The location that the metamodel'
+    default: ''
+  odesign-location:
+    description: 'The location that the odesign'
+    default: ''
+  edit-location:
+    description: 'The location that the edit'
+    default: ''
 branding:
   icon: 'box'
   color: 'purple'
@@ -21,19 +31,19 @@ runs:
         repository: epsilonlabs/sirius-pr-action-workspace
         path: model
     - name: Move model
-      run : mv $(pwd)/model/bundles/psl $(pwd)/bundles/model
+      run : mv $(pwd)/model/bundles/${{ inputs.model-location }} $(pwd)/bundles
       shell: bash
     - name: Move edit
-      run : mv $(pwd)/model/bundles/psl.edit $(pwd)/bundles/model.edit
+      run : mv $(pwd)/model/bundles/${{ inputs.odesign-location }} $(pwd)/bundles
       shell: bash
     - name: Move design
-      run : mv $(pwd)/model/bundles/psl.design $(pwd)/bundles/model.design
+      run : mv $(pwd)/model/bundles/${{ inputs.edit-location }} $(pwd)/bundles
       shell: bash
     - name: Tree
       run : tree
       shell: bash
     - name: Edit product
-      run : sed '44a\    <plugin id="psl"/>\n    <plugin id="psl.edit"/>\n    <plugin id="psl.design"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
+      run : sed '44a\    <plugin id="${{ inputs.model-location }}"/>\n    <plugin id="${{ inputs.edit-location }}"/>\n    <plugin id="${{ inputs.odesign-location }}"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
       shell: bash
     - name: Maven Build
       run : mvn clean verify
