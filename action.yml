@@ -43,7 +43,7 @@ runs:
       run : tree
       shell: bash
     - name: Edit product
-      run : sed '44a\    <plugin id="${{ inputs.model-location }}"/>\n    <plugin id="${{ inputs.edit-location }}"/>\n    <plugin id="${{ inputs.odesign-location }}"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
+      run : sed '44a\      <plugin id="${{ inputs.model-location }}"/>\n      <plugin id="${{ inputs.edit-location }}"/>\n      <plugin id="${{ inputs.odesign-location }}"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
       shell: bash
     - name: Maven Build
       run : mvn clean verify
