@@ -40,9 +40,10 @@ runs:
       run : mv $(pwd)/model/bundles/${{ inputs.edit-location }} $(pwd)/bundles
       shell: bash
     - name: Edit product
-      run : sed '44a\      <plugin id="${{ inputs.model-location }}"/>\n      <plugin id="${{ inputs.edit-location }}"/>\n      <plugin id="${{ inputs.odesign-location }}"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product > $(pwd)/products/uk.ac.york.ci.corvus.product/corvus2.ci.product \
-            | mv $(pwd)/products/uk.ac.york.ci.corvus.product/corvus2.ci.product $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product \
-            | cat $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
+      run : sed '44a\      <plugin id="${{ inputs.model-location }}"/>\n      <plugin id="${{ inputs.edit-location }}"/>\n      <plugin id="${{ inputs.odesign-location }}"/>' $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product > $(pwd)/products/uk.ac.york.ci.corvus.product/corvus2.ci.product
+      shell: bash
+    - name: Edit product
+      run : mv $(pwd)/products/uk.ac.york.ci.corvus.product/corvus2.ci.product $(pwd)/products/uk.ac.york.ci.corvus.product/corvus.ci.product
       shell: bash
     - name: Tree
       run : tree
